@@ -1,0 +1,37 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Persons
+        </ng-template>
+        <mat-list>
+          <mat-progress-spinner mode="indeterminate" *ngIf="!users"></mat-progress-spinner>
+          <div *ngFor="let user of users">
+            <mat-list-item (click)="openChat(user._id)">{{user.username}}</mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Chat rooms
+        </ng-template>
+        <mat-list>
+          <mat-list-item (click)="newChatRoom()">Новая</mat-list-item>
+          <mat-divider></mat-divider>
+          <div>
+            <mat-list-item>Комната</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Комната</mat-list-item>
+          </div>
+        </mat-list>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-chat *ngIf="chatId" [chatId]="chatId" [userId]="currentUserChat.userId"></app-chat>
+    <p *ngElse>Select with whom to chat in the left menu</p>
+  </mat-sidenav-content>
+</mat-sidenav-container>

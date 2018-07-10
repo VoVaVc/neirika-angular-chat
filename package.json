@@ -12,16 +12,22 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
+    "@angular/cdk": "^6.3.2",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
     "@angular/forms": "^6.0.3",
     "@angular/http": "^6.0.3",
+    "@angular/material": "^6.3.2",
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "angular2-websocket": "^0.9.6",
     "core-js": "^2.5.4",
+    "ngx-file-drop": "^4.0.6",
+    "queueing-subject": "^0.3.0",
     "rxjs": "^6.0.0",
+    "rxjs-websockets": "^6.0.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

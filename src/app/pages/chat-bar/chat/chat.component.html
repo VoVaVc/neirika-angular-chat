@@ -1,0 +1,36 @@
+<div class="background" (dragenter)="onFileDrag()" (mouseleave)="onFileLeave()">
+  <file-drop headertext="" (onFileDrop)="dropped($event)" customstyle="fileDropZoneItem" class="fileDropZone" *ngIf="fileDrop"></file-drop>
+  <div layout="row" #scrollMe>
+  	  <ul class="chatMessages">
+  	    <li *ngFor="let message of messages" class="chatMessage" [class.chatOpponent]="message.user == userId">
+            <div layout-fill *ngIf="message.file" (click)="getFile(message.date)">
+    	      	Wow, File! Click to download
+    	      </div>
+            <div layout-fill *ngIf="!message.file">
+              {{ message.message }}
+              <span class="date">{{ buildDateTime(message.date) }}</span>
+            </div>
+  	    </li>
+  	  </ul>
+  </div>
+  <form layout="row" class="writeBox" autocomplete="off">
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="What do you want to say?" name="message" [(ngModel)]="message"></textarea>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="sendMessage()">Send</button>
+  </form>
+   <div class="upload-table">
+       <table class="table">
+           <thead>
+               <tr>
+                   <th>Name</th>
+               </tr>
+           </thead>
+           <tbody class="upload-name-style">
+               <tr *ngFor="let item of files; let i=index">
+                   <td><strong>{{ item.relativePath }}</strong></td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+</div>

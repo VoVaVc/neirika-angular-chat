@@ -1,0 +1,78 @@
+.writeBox
+{
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  box-sizing: border-box;
+  border-left: 1px solid #dcdcdc;
+}
+
+  .writeBox textarea
+  {
+    width: 100%;
+  }
+
+.chatMessages
+{
+  list-style: none;
+  padding: 15px 15px 135px;
+  margin: 0;
+}
+
+.chatMessage
+{
+  margin: 5px 0;
+}
+
+  .chatMessage div
+  {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .chatOpponent
+  {
+    text-align: right;
+  }
+
+    .chatOpponent div
+    {
+      background-color: #0093ff;
+      color: #fff;
+    }
+
+.date
+{
+  display: block;
+  font-size: 9px;
+  text-align: left;
+  color: #9e9e9e;
+  padding: 5px 0 0;
+}
+
+  .chatOpponent .date
+  {
+    color: #fff;
+    text-align: right;
+  }
+
+.background
+{
+  background: #DCDCDC;
+}
+
+.fileDropZone
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0,0,0,.3);
+}
